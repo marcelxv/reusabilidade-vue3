@@ -8,15 +8,20 @@
 </template>
 
 <script>
-import montarFrase from '../mixins/testandomixin.js'
+import useMontarFrase from '../hooks/useMontarFrase'
 export default {
   name: "HelloWorld",
-  mixins: [montarFrase],
-};
+  setup() {
+    const { nome, deOndeVemEssaFuncao,  } = useMontarFrase()
+    return {
+      nome,
+      deOndeVemEssaFuncao
+    }
+  }
+}
 
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
