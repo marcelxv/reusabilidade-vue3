@@ -1,73 +1,68 @@
-import { ref } from 'vue'
+export const useMontarFrase = () => {
 
-export function useMontarFrase() {
-    const nome = ref('Marcel');
+  let frase
 
-    const deOndeVemEssaFuncao = () => {
-    const adjetivos = 
-        [
-        'feliz',
-        'bom',
-        'grande',
-        'simpático',
-        'corajoso',
-        'certo',
-        'último',
-        'vermelho',
-        'pequeno',
-        'áspero',
-        'feio',
-        'alto',
-        'dourado',
-        'rápido',
-        'maravilhoso',
-        'enorme',
-        'brilhante',
-        'novo',
-        'belo',
-        'fresco',
-        'sujo',
-        'carinhoso',
-        'obediente',
-        'responsável',
-        'desconfortável'
-        ];
+  function deOndeVemEssaFuncao(nome) {
 
-        const sujeitos = [
-          'sujeito',
-          'amigo',
-          'vingador',
-          'menino',
-          'chefe',
-          'proletário',
-          'advogado',
-          'criminoso',
-          'vovô',
-          'gato',
-          'alien'
-        ];
+  const adjetivos = [
+    "feliz",
+    "bom",
+    "grande",
+    "simpático",
+    "corajoso",
+    "certo",
+    "último",
+    "vermelho",
+    "pequeno",
+    "áspero",
+    "feio",
+    "alto",
+    "dourado",
+    "rápido",
+    "maravilhoso",
+    "enorme",
+    "brilhante",
+    "novo",
+    "belo",
+    "fresco",
+    "sujo",
+    "carinhoso",
+    "obediente",
+    "responsável",
+    "desconfortável",
+  ];
 
-        const emoji = [
-          '🦷',
-          '🧔🏼‍♂️',
-          '🪖',
-          '🐥',
-          '❄️',
-          '🌬',
-          '🎲',
-          '🔫',
-          '🚬',
-          '⚰️',
-          '🛀🏻',
-        ];
+  const sujeitos = [
+    "sujeito",
+    "amigo",
+    "vingador",
+    "menino",
+    "chefe",
+    "proletário",
+    "advogado",
+    "criminoso",
+    "vovô",
+    "gato",
+    "alien",
+  ];
 
-        const randomizer = () => Math.floor(Math.random() * 10);
-        randomizer()
-        const adjetivoSorteado = adjetivos[randomizer()]
-        const sujeitoSorteado = sujeitos[randomizer()]
-        const emojiSorteado = emoji[randomizer()]
+  const emoji = [
+    "🦷",
+    "🧔🏼‍♂️",
+    "🪖",
+    "🐥",
+    "❄️",
+  ];
 
-        const fraseMontada = `${this.nome} é um ${sujeitoSorteado} ${adjetivoSorteado} ${emojiSorteado}`
-        return fraseMontada
-    }
+  const randomizer = () => Math.floor(Math.random() * 10);
+  randomizer();
+
+  const adjetivoSorteado = adjetivos[randomizer()];
+  const sujeitoSorteado = sujeitos[randomizer()];
+  const emojiSorteado = emoji[randomizer()];
+
+  // console.log(`${nome} é um ${sujeitoSorteado} ${adjetivoSorteado} ${emojiSorteado}`);
+  console.log(`${nome} é um ${sujeitoSorteado} ${adjetivoSorteado} ${emojiSorteado}`);
+}
+return { deOndeVemEssaFuncao, frase };
 }

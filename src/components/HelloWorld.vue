@@ -3,22 +3,22 @@
   <hr>
   <input type='text' placeholder="seu nome" v-model="nome">
   <h4>{{nome}}</h4>
-  <p>{{deOndeVemEssaFrase}}</p>
-<button @click="deOndeVemEssaFuncao">Montar</button>
+  <p>{{frase}}</p>
+<button @click="deOndeVemEssaFuncao(nome)">Montar</button>
 </template>
 
 <script>
-import useMontarFrase from '../hooks/useMontarFrase'
+import { useMontarFrase } from '@/hooks/useMontarFrase';
+
 export default {
-  name: "HelloWorld",
+  name: 'HelloWorld',
   setup() {
-    const { nome, deOndeVemEssaFuncao,  } = useMontarFrase()
+    const { deOndeVemEssaFuncao, frase } = useMontarFrase();
     return {
-      nome,
-      deOndeVemEssaFuncao
-    }
-  }
-}
+      deOndeVemEssaFuncao, frase
+    };
+  },
+};
 
 </script>
 
